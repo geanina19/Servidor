@@ -1,0 +1,20 @@
+.divRojo {
+    background-color: red;
+    padding: 3px;
+}
+
+.divVerde {
+    background-color: green;
+    padding: 3px;
+    
+}
+
+.divAzul {
+    background-color: blue;
+    padding: 3px;
+    
+}
+
+p {
+    padding-left: 10px;
+}
