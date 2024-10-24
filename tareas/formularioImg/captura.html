@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Img</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column; /* Hace que los elementos hijos se apilen uno debajo del otro */
+            justify-content: center; /* Centra el contenido horizontalmente */
+            align-items: center; /* Centra el contenido verticalmente */
+            margin-bottom: 40px; /* Elimina márgenes por defecto */
+            background-color: #7b7891;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input[type="text"],[type="number"] {
+            border:1px solid #818080;
+            border-radius: 8px;
+            width: 98%;
+            padding: 5px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .divBotones {
+            margin-top: 10px; /* Espacio entre los botones */
+        }
+
+        .titulo {
+            text-align: center;
+        }
+
+        .divFormulario {
+            padding: 10px;
+            border: 1px solid #7b7891;
+            border-radius: 8px;
+            background-color: #ffffff; /* Color de fondo del div */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para un efecto visual */
+            line-height: 1.5; /* Aumenta el espacio entre líneas del formulario */
+        }
+
+        .subirArchivo {
+            border: 1px solid #818080;
+            border-radius: 8px;
+            padding: 10px;
+            width: 95%;
+        }
+
+        button {
+            border: rgb(4, 132, 252);
+            border-radius: 6px;
+            padding: 10px;
+            background-color: rgb(4, 132, 252);
+            color: #ffffff;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="titulo">
+        <h1>Formulario de Jugador</h1>
+    </div>
+    <br>
+    <form action="index.php" method="POST" enctype="multipart/form-data">
+        <div class="divFormulario">
+            <label>Nombre :</label><br>
+            <input type="text" name="nombre" size="65px" required><br><br>
+            <label>Alias :</label><br>
+            <input type="text" name="alias" size="65px" required><br><br>
+            <label>Edad :</label><br>
+            <input type="number" name="edad" size="65px" min="0" required><br><br>
+            <fieldset>
+                <legend>Armas a elegir (puedes elegir varias):</legend>
+                <input type="checkbox" name="maza" value="maza"><label> Maza</label><br>
+                <input type="checkbox" name="antorcha" value="antorcha"><label> Antorcha</label><br>
+                <input type="checkbox" name="martillo" value="martillo"><label> Martillo</label><br>
+                <input type="checkbox" name="latigo" value="latigo"><label> Látigo</label>
+            </fieldset><br>
+            <fieldset>
+                <legend>¿Practica artes mágicas?</legend>
+                <input type="radio" name="artesMagicas" value="si" checked><label> Sí</label><br>
+                <input type="radio" name="artesMagicas" value="no"><label> No</label>
+            </fieldset><br>
+            <label>Subir imagen :</label><br>
+            <input type="file" name="archivo" id="archivo" value="archivo" accept=".png" class="subirArchivo"><br><br>
+            <button name="enviar" value="enviar" onclick="validarTamanio()">Enviar</button>
+            <button name="borrar" value="borrar">Borrar</button>
+        </div>
+    </form>
+
+    <script>
+        // Validar el tamaño del archivo antes de enviar el formulario
+        function validarTamanio() {
+            var archivoSubido = document.getElementById('archivo');
+            var maxSize = 10 * 1024; // 10 KB
+            
+            // Verificamos que haya un archivo seleccionado
+            if (archivoSubido.files.length > 0) {
+                var tamanioDelArchivo = archivoSubido.files[0].size;
+
+                if (tamanioDelArchivo > maxSize) {
+                    alert('El archivo debe pesar menos de 10 KB.');
+                    return; // No enviar el formulario
+                }
+            }
+
+            // Si el archivo es válido, enviamos el formulario
+            document.querySelector('form').submit();
+        }
+    </script>
+    
+</body>
+</html>

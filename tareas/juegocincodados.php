@@ -181,9 +181,7 @@
         </div>
     </div>
     
-
     <label>Resultado </label><?= ganador($arrayDados1, $arrayDados2);?>
 
-    
 </body>
 </html>
