@@ -2,7 +2,6 @@
 
 session_start();
 
-
 if (isset($_POST['accion'])) {
     switch ($_POST['accion']) {
         case "Anotar":
@@ -36,7 +35,6 @@ if (isset($_POST['accion'])) {
         }
     }
 }
-
 
 function anotarPedido() {
     $cantidad = $_POST['cantidad'];
