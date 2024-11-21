@@ -64,7 +64,7 @@ function quitarPedido() {
     if ($cantidad > 0) {
         // añade a la clave ya existente la cantidad
         if (isset($_SESSION['frutas'][$fruta])) {
-            // si el valor de por ejemplo platano es 4, a 4 se le suma $cantidad 
+            // si el valor de por ejemplo platano es 4, a 4 se le resta $cantidad 
             $_SESSION['frutas'][$fruta] -= $cantidad;
 
             // si la cantidad de una fruta es 0 o menos, se elimina esa clave(la fruta)
