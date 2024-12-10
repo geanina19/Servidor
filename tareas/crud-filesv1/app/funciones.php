@@ -17,7 +17,7 @@ function volcarDatos(array $valores)
 
 // ----------------------------------------------------
 // FICHERO DE TEXT 
-//Carga los datos de un fichero de texto
+//Carga los datos de un fichero de textou 
 function cargarDatostxt(): array
 {
     // Si no existe lo creo
