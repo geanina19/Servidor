@@ -21,15 +21,6 @@
             // Agrega la bicicleta al array
             $bicicletas[] = $bici; 
 
-            // $bicicletas[] = [
-            //     'id' => (int)$datos[0],
-            //     'coordx' => (int)$datos[1],
-            //     'coordy' => (int)$datos[2],
-            //     'bateria' => (int)$datos[3],
-            //     'operativa' => (int)$datos[4]
-            // ];
-
-            // $bicicletas[$datos[0]] = [ $datos[1], $datos[2], $datos[3], $datos[4]];
         }
         fclose($ficheroAbierto);
 
