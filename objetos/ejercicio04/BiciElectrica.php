@@ -28,20 +28,16 @@ class BiciElectrica
     }
 
     // Getter
-    public function __get($propiedad) {
-
-        return $this->$propiedad;
-
-        // if (property_exists($this, $propiedad)) {
-        //     return $this->$propiedad;
-        // }
-        // return null;
+    public function __get($atributo) {
+        if (property_exists($this, $atributo)) {
+            return $this->$atributo;
+        }
     }
     
     // Setter
-    public function __set($propiedad, $valor) {
-        if (property_exists($this, $propiedad)) {
-            $this->$propiedad = $valor;
+    public function __set($atributo, $valor) {
+        if (property_exists($this, $atributo)) {
+            $this->$atributo = $valor;
         }
     }
 

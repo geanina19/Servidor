@@ -67,16 +67,28 @@
     
         // Recorre el array de bicicletas
         foreach ($tabla as $bici) {
-            if ($bici->operativa) { // Solo mostrar bicicletas operativas
+            if ($bici->operativa == true) { // Solo mostrar bicicletas operativas
                 
                 $msg .= '<tr>';
-                $msg .= '<td>' . htmlspecialchars($bici->id) . '</td>'; // ID de la bicicleta
-                $msg .= '<td>' . htmlspecialchars($bici->coordx) . '</td>'; // Coordenada X
-                $msg .= '<td>' . htmlspecialchars($bici->coordy) . '</td>'; // Coordenada Y
-                $msg .= '<td>' . htmlspecialchars($bici->bateria) . '%</td>'; // Batería
+                $msg .= '<td>' . $bici->id . '</td>'; // ID de la bicicleta
+                $msg .= '<td>' . $bici->coordx . '</td>'; // Coordenada X
+                $msg .= '<td>' . $bici->coordy . '</td>'; // Coordenada Y
+                $msg .= '<td>' . $bici->bateria . '%</td>'; // Batería
                 $msg .= '</tr>';
             }
         }
+
+        // foreach ($tabla as $bici) {
+        //     if ($bici[4] == 1) { // Solo mostrar bicicletas operativas
+                
+        //         $msg .= '<tr>';
+        //         $msg .= '<td>' . $bici[0] . '</td>'; // ID de la bicicleta
+        //         $msg .= '<td>' . $bici[1] . '</td>'; // Coordenada X
+        //         $msg .= '<td>' . $bici[2] . '</td>'; // Coordenada Y
+        //         $msg .= '<td>' . $bici[3] . '%</td>'; // Batería
+        //         $msg .= '</tr>';
+        //     }
+        // }
     
         $msg .= '</table>';
         return $msg;
