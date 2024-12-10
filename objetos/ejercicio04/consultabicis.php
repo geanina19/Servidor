@@ -30,8 +30,8 @@
     // Devuelve la bici con menor distancia a las coordenadas de usuario.
     function bicimascercana($coordx, $coordy, $tabla) {
 
-        $biciCercana = null; // Inicializa la bicicleta más cercana
-        $distanciaMinima = null; // Inicializa la distancia mínima como null
+        $biciCercana = null; 
+        $distanciaMinima = null; 
 
         foreach ($tabla as $bici) {
             if ($bici->operativa) {
@@ -77,19 +77,7 @@
                 $msg .= '</tr>';
             }
         }
-
-        // foreach ($tabla as $bici) {
-        //     if ($bici[4] == 1) { // Solo mostrar bicicletas operativas
-                
-        //         $msg .= '<tr>';
-        //         $msg .= '<td>' . $bici[0] . '</td>'; // ID de la bicicleta
-        //         $msg .= '<td>' . $bici[1] . '</td>'; // Coordenada X
-        //         $msg .= '<td>' . $bici[2] . '</td>'; // Coordenada Y
-        //         $msg .= '<td>' . $bici[3] . '%</td>'; // Batería
-        //         $msg .= '</tr>';
-        //     }
-        // }
-    
+        
         $msg .= '</table>';
         return $msg;
     }
